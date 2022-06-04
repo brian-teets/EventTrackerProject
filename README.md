@@ -5,9 +5,9 @@
 ### Project Overview
 
 `Event Tracker is a broad term for anything that keeps track of information over time. Examples of these applications are 'Mint' (financial tracking)
-and 'MyFitnessPal' (diet and exercise tracker). These are very involved applications with a huge feature set.
+and 'MyFitnessPal' (diet and exercise tracker). These are very involved applications with a huge feature set.`
 
-This is a weekend project that is limited in scope. Examples of limited scope would be 'Gas Tracker' (keep track of your fill ups and total mileage
+`This is a weekend project that is limited in scope. Examples of limited scope would be 'Gas Tracker' (keep track of your fill ups and total mileage
 to determine dollar/gallon in your car) or 'Timesheet' (track time in and time out to calculate total hours at some rate of pay).`
 
 ### Learning Objectives
