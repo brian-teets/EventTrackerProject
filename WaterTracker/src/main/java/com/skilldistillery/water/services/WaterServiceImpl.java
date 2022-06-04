@@ -52,6 +52,13 @@ public class WaterServiceImpl implements WaterService {
 		existingLog.setIsSparklingWater(water.getIsSparklingWater());
 		existingLog.setWaterLogComment(water.getWaterLogComment()); 
 		return waterRepo.saveAndFlush(existingLog);
+	}
+
+	@Override
+	public Boolean deleteWaterLogEntry(int id) {
+		waterRepo.deleteById(id);
+		return !waterRepo.existsById(id); 
+		
 	} 
 
 }
