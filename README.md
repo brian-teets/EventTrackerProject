@@ -26,8 +26,8 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
    * Project will have been deployed to my AWS EC2 server.
    * Project does not have a front-end implemented, so the `routes can be tested using Postman. See table below which includes route information.`
 
-   | Return Type      | Route           | Functionality     |
-   | :----             |    :----:       |          :----:     |
+   | Return Type     | Route          | Functionality    |
+   |-----------------|-----------------|-----------------|
    | `List<Water>` | `GET api/water` | READ Operation to show list of all water log entries  |
    | `Water object`     | `GET api/water/{id}`  | READ Operation to show a water log entry by its id  |
    | `Water object`     | `POST api/water`  | CREATE Operation to create a new water log entry  |
