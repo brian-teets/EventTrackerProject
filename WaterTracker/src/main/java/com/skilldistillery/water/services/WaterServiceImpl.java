@@ -15,6 +15,7 @@ public class WaterServiceImpl implements WaterService {
 	@Autowired
 	private WaterRepository waterRepo;
 
+	
 	@Override
 	public List<Water> index() {
 		return waterRepo.findAll();
@@ -32,13 +33,25 @@ public class WaterServiceImpl implements WaterService {
 
 	@Override
 	public Water createNewWaterLog(Water water) {
-
 		double DEFAULT_AMOUNT_IN_OUNCES = 12.00;
+		Boolean DEFAULT_IS_SPARKLING_WATER = false;
 		if (water.getAmountInOunces() == null) {
 			water.setAmountInOunces(DEFAULT_AMOUNT_IN_OUNCES);
-
 		}
-		return waterRepo.saveAndFlush(water);
+		if (water.getIsSparklingWater() == null) {
+			water.setIsSparklingWater(DEFAULT_IS_SPARKLING_WATER); 
+		}
+		return waterRepo.saveAndFlush(water); 
 	}
+
+	@Override
+	public Water updateWaterLog(Water water, int id) {
+		Water existingLog = showLogById(id);
+
+		existingLog.setAmountInOunces(water.getAmountInOunces());
+		existingLog.setIsSparklingWater(water.getIsSparklingWater());
+		existingLog.setWaterLogComment(water.getWaterLogComment()); 
+		return waterRepo.saveAndFlush(existingLog);
+	} 
 
 }
