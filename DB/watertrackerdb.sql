@@ -47,6 +47,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `mywatertrackerdb`;
 INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (1, 12.00, 1, 'Bubly cherry flavored', DEFAULT, DEFAULT);
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (2, 12.00, 1, 'Bubly strawberry flavored', DEFAULT, DEFAULT);
 
 COMMIT;
 
