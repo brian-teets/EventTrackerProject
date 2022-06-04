@@ -1,4 +1,4 @@
-# Event Tracker Project - using REST APIs 
+# Event Tracker Project - using REST APIs
 
 ## Weekend Project for Skill Distillery: Cohort SD33
 
@@ -21,10 +21,6 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
   * Use Spring Data JPA to perform all CRUD operations.
        * Implement operations including: Create, Read `(show list of all & show a record by its id)`, Update, Delete.
   * Send and receive JSON.
-
-### Stretch Goals
-  * JUnit tests for your repository, service, and controller layers.
-  * Supplemental tables, mappings, and controller routes for nested CRUD.
 
 ### How to Run
    * Project will have been deployed to my AWS EC2 server.
