@@ -28,7 +28,7 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
 
    | Return Type      | Route           | Functionality     |
    | :----:             |    :----:       |          :----:     |
-   | List<Water>      | GET api/water | READ Operation to show list of all water log entries  |
+   | <code>List<Water> </code> | GET api/water | READ Operation to show list of all water log entries  |
    | Water object     | GET api/water/{id}   | READ Operation to show a water log entry by its id  |
    | Water object     | POST api/water  | CREATE Operation to create a new water log entry  |
    | Water object     | PATCH api/water/{id}   | UPDATE Operation to update an existing water log entry by its id  |
