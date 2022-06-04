@@ -28,11 +28,11 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
 
    | Return Type      | Route           | Functionality     |
    | :----:             |    :----:       |          :----:     |
-   | <code>List<Water> </code> | GET api/water | READ Operation to show list of all water log entries  |
-   | Water object     | GET api/water/{id}   | READ Operation to show a water log entry by its id  |
-   | Water object     | POST api/water  | CREATE Operation to create a new water log entry  |
-   | Water object     | PATCH api/water/{id}   | UPDATE Operation to update an existing water log entry by its id  |
-   | Boolean     | DELETE api/water/{id}   | DELETE Operation to delete a water log entry by its id  |
+   | `List<Water>` | `GET api/water` | READ Operation to show list of all water log entries  |
+   | `Water object`     | `GET api/water/{id}`  | READ Operation to show a water log entry by its id  |
+   | `Water object`     | `POST api/water`  | CREATE Operation to create a new water log entry  |
+   | `Water object`     | `PATCH api/water/{id}`   | UPDATE Operation to update an existing water log entry by its id  |
+   | `Boolean`     | `DELETE api/water/{id}`   | DELETE Operation to delete a water log entry by its id  |
 
 ### Technologies Used
    * Java
@@ -48,4 +48,4 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
 ### Lessons Learned
    * Gained hands on experience performing CRUD operations using Spring Data JPA and Jpa Repository + Service / ServiceImpl and Controller - this was
    an adjustment, but also an upgrade from previous projects utilizing DAO and DAOImpl.
-   * Gained hands on experience sending and receiving data via `JSON` and seeing data persist to local database.
+   * Gained hands on experience sending and receiving data via `JSON` and seeing data persist to local database. 
