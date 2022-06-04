@@ -33,9 +33,9 @@
 
 ### Entity Code Snippet
 
-| Water entity code snippet to show data fields used |
-|----------------------------------------------------|
-|
+#### Water entity code snippet to show data fields used
+
+
 ```
 @Table(name = "water_tracker")
 @Entity
@@ -57,7 +57,6 @@ public class Water {
 	@UpdateTimestamp
 	private LocalDateTime updatedAt;
   ```
-  |
 
 ### How to Run
    * Project will have been deployed to my AWS EC2 server.
