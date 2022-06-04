@@ -22,7 +22,11 @@ DROP TABLE IF EXISTS `water_tracker` ;
 
 CREATE TABLE IF NOT EXISTS `water_tracker` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `quantity` DECIMAL(4,2) NOT NULL,
+  `amount_in_ounces` DECIMAL(4,2) NOT NULL,
+  `is_sparkling` TINYINT NULL,
+  `water_log_comment` VARCHAR(250) NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,7 +46,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mywatertrackerdb`;
-INSERT INTO `water_tracker` (`id`, `quantity`) VALUES (1, 12.00);
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (1, 12.00, 1, 'Bubly cherry flavored', NULL, NULL);
 
 COMMIT;
 
