@@ -64,11 +64,11 @@ public class Water {
 
    | Return Type     | Route          | Functionality    |
    |-----------------|-----------------|-----------------|
-   | `List<Water>` | `GET api/water` | READ Operation to show list of all water log entries  |
-   | `Water object`     | `GET api/water/{id}`  | READ Operation to show a water log entry by its id  |
-   | `Water object`     | `POST api/water`  | CREATE Operation to create a new water log entry  |
-   | `Water object`     | `PATCH api/water/{id}`   | UPDATE Operation to update an existing water log entry by its id  |
-   | `Boolean`     | `DELETE api/water/{id}`   | DELETE Operation to delete a water log entry by its id  |
+   | `List<Water>` | `GET api/water` | READ Operation to show list of all water log entries.  |
+   | Water object    | `GET api/water/{id}`  | READ Operation to show a water log entry by its id.  |
+   | Water object     | `POST api/water`  | CREATE Operation to create a new water log entry.  |
+   | Water object     | `PATCH api/water/{id}`   | UPDATE Operation to update an existing water log entry by its id.  |
+   | Boolean     | `DELETE api/water/{id}`   | DELETE Operation to delete a water log entry by its id.  |
 
 ### Technologies Used
    * Java
