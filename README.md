@@ -46,6 +46,6 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
    * AWS EC2
 
 ### Lessons Learned
-   * Gained hands on experience performing CRUD operations using Spring Data JPA and Jpa Repository - this was an adjustment from previous projects utilizing
-   DAO and DAOImpl.
-   * Gained hands on experience sending and receiving data via JSON and seeing data persist to local database.
+   * Gained hands on experience performing CRUD operations using Spring Data JPA and Jpa Repository + Service / ServiceImpl and Controller - this was
+   an adjustment, but also an upgrade from previous projects utilizing DAO and DAOImpl.
+   * Gained hands on experience sending and receiving data via `JSON` and seeing data persist to local database.
