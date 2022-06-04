@@ -21,7 +21,7 @@
   This weekend project is intentionally limited in scope. The main goal is to gain hands on experience implementing REST APIs utilizing Spring Data JPA
   and Spring Boot.
 
-### My Project Overview - Personal Water Tracker
+### My Project Implementation - Personal Water Tracker
 
    For my weekend project, I decided to create a personal water tracker to log water intake over time.
 
