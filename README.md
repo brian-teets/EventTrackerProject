@@ -21,7 +21,7 @@
   This weekend project is intentionally limited in scope. The main goal is to gain hands on experience implementing REST APIs utilizing Spring Data JPA
   and Spring Boot.
 
-#### My Project Implementation - Personal Water Tracker
+### My Project Overview - Personal Water Tracker
 
    For my weekend project, I decided to create a personal water tracker to log water intake over time.
 
@@ -30,6 +30,34 @@
 
    I implemented CRUD operations in this project - each of which mapped to REST controller routes. I tested my API routes using Postman, and confirmed that
    JSON data sent / received and persisted data to my local database.
+
+### Entity Code Snippet
+
+| Water entity code snippet to show data fields used |
+|----------------------------------------------------|
+|
+```
+@Table(name = "water_tracker")
+@Entity
+public class Water {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@Column(name = "amount_in_ounces")
+	private Double amountInOunces;
+	@Column(name = "is_sparkling")
+	private Boolean isSparklingWater;
+	@Column(name = "water_log_comment")
+	private String waterLogComment;
+	@Column(name = "created_at")
+	@CreationTimestamp
+	private LocalDateTime createdAt;
+	@Column(name = "updated_at")
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
+  ```
+  |
 
 ### How to Run
    * Project will have been deployed to my AWS EC2 server.
