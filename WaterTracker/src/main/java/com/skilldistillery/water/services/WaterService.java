@@ -6,6 +6,7 @@ import com.skilldistillery.water.entities.Water;
 
 public interface WaterService {
 	
-	List<Water> index();
-	Water showLogById(int id);
+	List<Water> index(); // show all water log entries
+	Water showLogById(int id); // show a single water log entry by its id
+	
 }
