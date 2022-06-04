@@ -2,29 +2,38 @@
 
 ## Weekend Project for Skill Distillery: Cohort SD33
 
-### Project Overview
-
-`Event Tracker is a broad term for anything that keeps track of information over time. Examples of these applications are 'Mint' (financial tracking)
-and 'MyFitnessPal' (diet and exercise tracker). These are very involved applications with a huge feature set.`
-
-`This is a weekend project that is limited in scope. Examples of limited scope would be 'Gas Tracker' (keep track of your fill ups and total mileage
-to determine dollar/gallon in your car) or 'Timesheet' (track time in and time out to calculate total hours at some rate of pay).`
-
 ### Learning Objectives
 
 * Create a JPA Project
-  * Create a Java entity class POJO that models your database table. This is set up as a single table project.
-  * Map your POJO using JPA.
+  * Create a Java entity class POJO that models database table. This project is set up with a single database table.
+  * Map POJO using JPA.
 
-* Configure a Spring Boot app to publish a REST API.
+* Configure a Spring Boot app to publish REST APIs.
   * Use Spring REST annotations.
   * Use Spring Data JPA to perform all CRUD operations.
-       * Implement operations including: Create, Read `(show list of all & show a record by its id)`, Update, Delete.
+       * Implement operations including: Create, Read (show list of all & show a record by its id), Update, Delete.
   * Send and receive JSON.
+
+### Project Overview
+
+  This event tracker project is an exercise in keeping track of information over time and persisting information to a database.
+
+  This weekend project is intentionally limited in scope. The main goal is to gain hands on experience implementing REST APIs utilizing Spring Data JPA
+  and Spring Boot.
+
+#### My Project Implementation - Personal Water Tracker
+
+   For my weekend project, I decided to create a personal water tracker to log water intake over time.
+
+   I created a single SQL table in MySQL Workbench. Then, I created a Java entity to map to my SQL table. I then implemented a Spring JPA Repository,
+   Service, ServiceImpl and Controller.
+
+   I implemented CRUD operations in this project - each of which mapped to REST controller routes. I tested my API routes using Postman, and confirmed that
+   JSON data sent / received and persisted data to my local database.
 
 ### How to Run
    * Project will have been deployed to my AWS EC2 server.
-   * Project does not have a front-end implemented, so the `routes can be tested using Postman. See table below which includes route information.`
+   * Project does not have a front-end implemented. `Routes can be tested using Postman. See table below which includes route information.`
 
    | Return Type     | Route          | Functionality    |
    |-----------------|-----------------|-----------------|
