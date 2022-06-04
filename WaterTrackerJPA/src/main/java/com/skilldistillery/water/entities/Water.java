@@ -21,7 +21,7 @@ public class Water {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "amount_in_ounces")
-	private double amountInOunces;
+	private Double amountInOunces;
 	@Column(name = "is_sparkling")
 	private Boolean isSparklingWater;
 	@Column(name = "water_log_comment")
@@ -47,12 +47,12 @@ public class Water {
 	
 	
 
-	public double getAmountInOunces() {
+	public Double getAmountInOunces() {
 		return amountInOunces;
 	}
 
 
-	public void setAmountInOunces(double amountInOunces) {
+	public void setAmountInOunces(Double amountInOunces) {
 		this.amountInOunces = amountInOunces;
 	}
 

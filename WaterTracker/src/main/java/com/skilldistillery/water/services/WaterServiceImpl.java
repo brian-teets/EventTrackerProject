@@ -11,23 +11,34 @@ import com.skilldistillery.water.repositories.WaterRepository;
 
 @Service
 public class WaterServiceImpl implements WaterService {
-	
+
 	@Autowired
 	private WaterRepository waterRepo;
 
 	@Override
 	public List<Water> index() {
-		return waterRepo.findAll(); 
+		return waterRepo.findAll();
 	}
 
 	@Override
 	public Water showLogById(int id) {
 		Optional<Water> waterOpt = waterRepo.findById(id);
 		Water waterLog = null;
-		if(waterOpt.isPresent()) {
+		if (waterOpt.isPresent()) {
 			waterLog = waterOpt.get();
 		}
-		return waterLog; 
+		return waterLog;
+	}
+
+	@Override
+	public Water createNewWaterLog(Water water) {
+
+		double DEFAULT_AMOUNT_IN_OUNCES = 12.00;
+		if (water.getAmountInOunces() == null) {
+			water.setAmountInOunces(DEFAULT_AMOUNT_IN_OUNCES);
+
+		}
+		return waterRepo.saveAndFlush(water);
 	}
 
 }
