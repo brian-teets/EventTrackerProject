@@ -27,7 +27,7 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
    * Project does not have a front-end implemented, so the `routes can be tested using Postman. See table below which includes route information.`
 
    | Return Type      | Route           | Functionality     |
-   | :----:             |    :----:       |          :----:     |
+   | :----             |    :----:       |          :----:     |
    | `List<Water>` | `GET api/water` | READ Operation to show list of all water log entries  |
    | `Water object`     | `GET api/water/{id}`  | READ Operation to show a water log entry by its id  |
    | `Water object`     | `POST api/water`  | CREATE Operation to create a new water log entry  |
@@ -48,4 +48,4 @@ to determine dollar/gallon in your car) or 'Timesheet' (track time in and time o
 ### Lessons Learned
    * Gained hands on experience performing CRUD operations using Spring Data JPA and Jpa Repository + Service / ServiceImpl and Controller - this was
    an adjustment, but also an upgrade from previous projects utilizing DAO and DAOImpl.
-   * Gained hands on experience sending and receiving data via `JSON` and seeing data persist to local database. 
+   * Gained hands on experience sending and receiving data via `JSON` and seeing data persist to local database.
