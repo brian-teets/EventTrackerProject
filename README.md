@@ -1,6 +1,6 @@
 # Event Tracker Project - using REST APIs
 
-## Weekend Project for Skill Distillery: Cohort SD33
+## Weekend Project for Skill Distillery: SD33 cohort 
 
 ### Learning Objectives
 
