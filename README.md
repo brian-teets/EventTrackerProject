@@ -1,6 +1,6 @@
 # Event Tracker Project - using REST APIs
 
-## Weekend Project for Skill Distillery: SD33 cohort 
+## Weekend Project for Skill Distillery: SD33 cohort
 
 ### Learning Objectives
 
@@ -59,7 +59,7 @@ public class Water {
   ```
 
 ### How to Run
-   * Project will have been deployed to my AWS EC2 server.
+   * Project has been deployed to my AWS EC2 server: http://52.8.112.153:8080/WaterTracker/api/water.
    * Project does not have a front-end implemented. `Routes can be tested using Postman. See table below which includes route information.`
 
    | Return Type     | Route          | Functionality    |
