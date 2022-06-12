@@ -35,11 +35,15 @@ public class WaterServiceImpl implements WaterService {
 	public Water createNewWaterLog(Water water) {
 		double DEFAULT_AMOUNT_IN_OUNCES = 12.00;
 		Boolean DEFAULT_IS_SPARKLING_WATER = false;
+		String DEFAULT_WATERLOG_COMMENT = "Default water log comment.";
 		if (water.getAmountInOunces() == null) {
 			water.setAmountInOunces(DEFAULT_AMOUNT_IN_OUNCES);
 		}
 		if (water.getIsSparklingWater() == null) {
 			water.setIsSparklingWater(DEFAULT_IS_SPARKLING_WATER); 
+		}
+		if (water.getWaterLogComment() == null) {
+			water.setWaterLogComment(DEFAULT_WATERLOG_COMMENT); 
 		}
 		return waterRepo.saveAndFlush(water); 
 	}
