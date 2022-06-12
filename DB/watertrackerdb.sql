@@ -46,13 +46,13 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mywatertrackerdb`;
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (1, 12.00, 1, 'Bubly cherry flavored', '2022-06-04T07:13:57', '2022-06-04T07:13:57');
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (2, 12.00, 1, 'Bubly strawberry flavored', '2022-06-04T07:13:57', '2022-06-04T07:13:57');
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (3, 9.50, 0, 'Black Stag vanilla iced latte', '2022-06-04T08:13:57', '2022-06-04T08:13:57');
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (4, 12.00, 0, 'Filtered tap water', '2022-06-04T09:13:57', '2022-06-04T09:13:57');
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (5, 8.00, 0, 'Filtered tap water', '2022-06-04T09:13:57', '2022-06-04T09:13:57');
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (6, 9.50, 0, 'Drank a Black Stag vanilla iced latte', '2022-06-11T12:13:01', '2022-06-11T12:13:01');
-INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (7, 12.00, 1, 'Bubly passionfruit flavored', '2022-06-11T21:17:56', '2022-06-11T21:17:56');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (1, 12.00, 1, 'Bubly cherry flavored sparkling water.', '2022-06-04T07:13:57', '2022-06-12T10:05:12');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (2, 12.00, 1, 'Bubly strawberry flavored sparkling water.', '2022-06-04T07:13:57', '2022-06-12T10:05:56');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (3, 9.50, 0, 'Black Stag - bottled vanilla iced latte.', '2022-06-04T08:13:57', '2022-06-12T10:07:03');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (4, 12.00, 0, 'Filtered tap water. Pur water filter dispenser.', '2022-06-04T09:13:57', '2022-06-12T10:03:09');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (5, 8.00, 0, 'Filtered tap water. Pur water filter dispenser.', '2022-06-04T09:13:57', '2022-06-12T10:02:22');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (6, 9.50, 0, 'Drank a bottle of Black Stag vanilla iced latte.', '2022-06-11T12:13:01', '2022-06-12T09:59:58');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (7, 12.00, 1, 'Bubly passionfruit flavored sparkling water.', '2022-06-11T21:17:56', '2022-06-12T09:58:07');
 
 COMMIT;
 
