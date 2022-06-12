@@ -80,22 +80,38 @@ function displayWaterLog(waterLog) {
 		// add eventListener before appending to row
 		tr.addEventListener('click', function() {
 			// create an h1 when row is clicked
+			// dynamically display header element for table of data: existing log entry of row clicked
 			let displayExistingEntryH3 = document.getElementById('displayExistingEntriesH3');
-			displayExistingEntryH3.textContent = 'Existing Water Log Entry Detail';
-			let displayExistingEntry = document.getElementById('existingEntries');
-			let existingEntryId = document.getElementById('entryId');
-			existingEntryId.textContent = 'ID: ' + water.id;
-			let existingEntryAmount = document.getElementById('ounces');
+			displayExistingEntryH3.textContent = 'Water Log Entry Detail';
+			// dynamically display table header tags of existin log entry of row clicked
+			let existingEntryHeaderId = document.getElementById('existingEntryHeaderId');
+			existingEntryHeaderId.textContent = 'Id';
+			document.getElementById('existingEntryHeaderCreatedAt').textContent = 'Entry Created At';
+			document.getElementById('existingEntryHeaderUpdatedAt').textContent = 'Entry Updated At';
+			document.getElementById('existingEntryHeaderOunces').textContent = 'Amt In Ounces';
+			document.getElementById('existingEntryHeaderisSparkling').textContent = 'isSparkling';
+			document.getElementById('existingEntryHeaderLogComment').textContent = 'Log Entry Comment';
+			// dynamically display text content for a detail view of row clicked on
+			let existingEntryId = document.getElementById('existingEntryId');
+			existingEntryId.textContent = water.id;
+			let existingEntryAmount = document.getElementById('existingEntryounces');
 			existingEntryAmount.textContent = water.amountInOunces + 'oz';
-			let existingEntryCreated = document.getElementById('created');
+			let existingEntryCreated = document.getElementById('existingEntrycreated');
 			existingEntryCreated.textContent = water.createdAt;
-			let existingEntryUpdated = document.getElementById('updated');
+			let existingEntryUpdated = document.getElementById('existingEntryupdated');
 			existingEntryUpdated.textContent = water.updatedAt;
+			let existingEntryisSparkling = document.getElementById('existingEntryisSparkling');
+			existingEntryisSparkling.textContent = water.isSparklingWater;
+			let existingEntryComment = document.getElementById('existingEntrylogComment');
+			existingEntryComment.textContent = water.waterLogComment;
 		});
 
 		tbody.appendChild(tr);
 		let td = document.createElement('td');
 		td.textContent = water.id;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = water.createdAt;
 		tr.appendChild(td);
 		td = document.createElement('td');
 		td.textContent = water.amountInOunces + 'oz';
