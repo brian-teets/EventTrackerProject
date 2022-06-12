@@ -46,6 +46,7 @@ function sendNewEntry(newEntry) {
 	xhr.setRequestHeader('Content-type', 'application/json');
 	xhr.send(JSON.stringify(newEntry)); // must come after the onreadystatechange body 
 	loadWaterLog();
+	location.reload(); // force page reload after creating a new log entry to force table refresh and table display
 }
 
 function displayError(message) {
@@ -61,7 +62,7 @@ function loadWaterLog() {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200 && xhr.responseText) {
 				let waterLog = JSON.parse(xhr.responseText);
-				console.log(waterLog);
+				//console.log(waterLog);
 				displayWaterLog(waterLog);
 			}
 		}
