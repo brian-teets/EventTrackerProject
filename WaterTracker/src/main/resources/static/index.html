@@ -49,7 +49,7 @@
 					<h3>Add a New Water Log Entry</h3>
 					<form name="createWaterLogForm">
 						<label for="amountInOunces">Amount in Ounces:</label> <input
-							type="number" name="amountInOunces" placeholder="8.0" step="0.25"
+							type="number" name="amountInOunces" placeholder="8.0" step="0.50"
 							min="1.0" max="72.00" required><br> <label>Sparkling
 							Water?</label> <select name="isSparklingWater" required>
 							<option value="">-- True or False --</option>
@@ -60,6 +60,7 @@
 							placeholder="Water log entry comment..." required></textarea>
 						<br>
 						<button name="addNewWaterLogButton">Add Water Log</button>
+						<div id="updateButtonDiv"></div>
 					</form>
 				</div>
 				<!-- newWaterLogDiv close -->
@@ -81,6 +82,7 @@
 								<td id="existingEntryHeaderOunces"></td>
 								<td id="existingEntryHeaderisSparkling"></td>
 								<td id="existingEntryHeaderLogComment"></td>
+								<td id="existingEntryHeaderActionButtons"></td>
 							</tr>
 						</thead>
 							<tbody>
@@ -91,6 +93,8 @@
 									<td id="existingEntryounces"> </td>
 									<td id="existingEntryisSparkling"> </td>
 									<td id="existingEntrylogComment"> </td>
+									<td id="existingEntryUpdateButton"> </td>
+									<td id="existingEntryDeleteButton"> </td>
 								</tr>
 
 							</tbody>
@@ -103,6 +107,28 @@
 			<!-- end div for updateAndDelete div column -->
 		</div>
 		<!-- row end div -->
+		<div class="row">
+			<div class="col-3">
+			</div> <!-- end div for 1st col-3 of 4 -->
+			<div class="col-3">
+				<h5 id="updateH5"> </h5>
+				<div id="updateFormDiv">
+						<form name="updateForm">
+						
+						</form>
+					</div> <!-- end div for updateFormDiv -->
+			</div> <!-- end div for 2nd col-3 of 4. contains updateFormDiv-->
+			<div class="col-3">
+				<div class="row align-items-center">
+					<div class="col" id="deletEntry">
+						<h5 id="deleteEntryH5"> </h5>
+						<div id="deleteEntryButton"> <!-- place delete button in here --> </div>
+					</div>
+				</div> <!-- end of row div -->
+			</div> <!-- end div for 3rd col-3 of 4. contains deleteEntry-->
+			<div class="col-3">
+			</div> <!-- end div for 4th col-3 of 4 -->
+		</div> <!-- row end div - below detail view -->
 
 
 
