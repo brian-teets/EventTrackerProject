@@ -246,7 +246,7 @@ function dynamicUpdateEntryForm(water) {
 		updateButtonDiv.removeChild(updateButton);
 	}
 	updateButton = document.createElement('button');
-	updateButton.textContent = 'Update Entry';
+	updateButton.textContent = 'Update Selected Entry';
 	updateButton.value = water.id;
 	updateButtonDiv.appendChild(updateButton);
 	updateButton.addEventListener('click', updateLogEntry);
