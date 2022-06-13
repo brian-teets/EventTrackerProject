@@ -31,6 +31,8 @@
    I implemented CRUD operations in this project - each of which mapped to REST controller routes. I tested my API routes using Postman, and confirmed that
    JSON data sent / received and persisted data to my local database.
 
+   When returning for the second weekend, I implemented Javascript and an HTML index page for a front end.
+
 ### Entity Code Snippet
 
 #### Water entity code snippet to show data fields used
@@ -59,8 +61,9 @@ public class Water {
   ```
 
 ### How to Run
-   * Project has been deployed to my AWS EC2 server: http://52.8.112.153:8080/WaterTracker/api/water.
-   * Project does not have a front-end implemented. `Routes can be tested using Postman. See table below which includes route information.`
+   * Project now has a front end and can be tested via link to project domain name on my AWS EC2 server, which I'll post here:
+
+   * For reference, here are the backend controller routes:
 
    | Return Type     | Route          | Functionality    |
    |-----------------|-----------------|-----------------|
@@ -69,6 +72,16 @@ public class Water {
    | Water object     | `POST api/water`  | CREATE Operation to create a new water log entry.  |
    | Water object     | `PATCH api/water/{id}`   | UPDATE Operation to update an existing water log entry by its id.  |
    | Boolean     | `DELETE api/water/{id}`   | DELETE Operation to delete a water log entry by its id.  |
+
+   * For testing on the front end now using the index page, you will see a table at the top left of the page containing a list of all current log entries.
+   * You can click on any row of this index table to dynamically display a detail view of that specific record. The detail view will dynamically generate in
+   a div section below. This is controlled by code in the Javascript file.
+   * With the detail view open, you have the ability to delete that specific record by clicking the `Delete This Entry` button. That log entry will be deleted
+   from the database, and the table view and detail view will reload to reflect the change.
+   * Also, when in the detail view, you will see that that entries values have been loaded to the `Add A New Water Log Entry` at the right side of the window.
+   This was implemented for reusability of the existing form and for a slightly simpler implementation. From the form, you can edit / update this specific entry.
+   Hit the `Update Selected Entry` button.
+   * Additionally, you can `create` a new log entry using the `Add A New Water Log Entry` and hitting the `Add Water Log` button.
 
 ### Technologies Used
    * Java
@@ -80,8 +93,11 @@ public class Water {
    * Postman
    * git
    * AWS EC2
+   * Javascript
+   * HTML 
 
 ### Lessons Learned
    * Gained hands on experience performing CRUD operations using Spring Data JPA and Jpa Repository + Service / ServiceImpl and Controller - this was
    an adjustment, but also an upgrade from previous projects utilizing DAO and DAOImpl.
    * Gained hands on experience sending and receiving data via `JSON` and seeing data persist to local database.
+   * The biggest challenges on the Javascript side were related to DOM traversal and dynamic DOM manipulation.
