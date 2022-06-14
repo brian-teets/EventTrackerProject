@@ -184,6 +184,7 @@ function appendShowAllRows(water){
 		
 			dynamicUpdateEntryForm(water);
 			dynamicDeleteDivDisplay(water.id);
+			dataAgg(water);
 		});
 	tbody.appendChild(tr);
 		let td = document.createElement('td');
@@ -301,4 +302,11 @@ function clearExistingInDynamicTableRow() {
 	document.createWaterLogForm.isSparklingWater.value = null;
 	document.createWaterLogForm.waterLogComment.value = null;
 	removeElement(document.getElementById('updateButtonDiv'));
+}
+
+function dataAgg(water){
+	let amtAgg = document.getElementById('amtAgg');
+	if(water.createdAt.getMonth() === getMonth()){
+		
+	}
 }
