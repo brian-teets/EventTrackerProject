@@ -7,6 +7,7 @@ window.addEventListener('load', function(evt) {
 function init() {
 	console.log('in init()');
 	loadWaterLog();
+	//dataAgg();
 
 	// TODO: 
 	// Create new log entry function callback
@@ -131,6 +132,7 @@ function loadWaterLog() {
 				let waterLog = JSON.parse(xhr.responseText);
 				//console.log(waterLog);
 				displayWaterLog(waterLog);
+				dataAgg(waterLog);
 			}
 		}
 	};
@@ -184,7 +186,6 @@ function appendShowAllRows(water){
 		
 			dynamicUpdateEntryForm(water);
 			dynamicDeleteDivDisplay(water.id);
-			dataAgg(water);
 		});
 	tbody.appendChild(tr);
 		let td = document.createElement('td');
@@ -304,9 +305,17 @@ function clearExistingInDynamicTableRow() {
 	removeElement(document.getElementById('updateButtonDiv'));
 }
 
-function dataAgg(water){
+function dataAgg(waterLog){
 	let amtAgg = document.getElementById('amtAgg');
-	if(water.createdAt.getMonth() === getMonth()){
-		
-	}
+	amtAgg.textContent = '';
+	let total = 0;
+	for(let i = 0; i < water.length; i ++){
+			total = total + water.amountInOunces.value;
+		}
+//	if(water.createdAt.getMonth() === getMonth()){
+//		for(let i = 0; i < water.length; i ++){
+//			total = total + water.amountInOunces.value;
+//		}
+//	}
+	amtAgg.textContent = total;
 }
