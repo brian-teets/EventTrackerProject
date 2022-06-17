@@ -309,13 +309,7 @@ function dataAgg(waterLog){
 	let amtAgg = document.getElementById('amtAgg');
 	amtAgg.textContent = '';
 	let total = 0;
-	for(let i = 0; i < water.length; i ++){
-			total = total + water.amountInOunces.value;
-		}
-//	if(water.createdAt.getMonth() === getMonth()){
-//		for(let i = 0; i < water.length; i ++){
-//			total = total + water.amountInOunces.value;
-//		}
-//	}
+	total = waterLog.length;
 	amtAgg.textContent = total;
+	console.log(total);
 }
