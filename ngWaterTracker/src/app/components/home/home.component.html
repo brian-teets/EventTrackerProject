@@ -1,9 +1,10 @@
 <h1 class="text-center py-3">Water Tracker</h1>
-<div id="showAllWaterLogEntries">
+<div id="showAllWaterLogEntries" *ngIf="!selected">
     <h2 class="py-auto px-2">Water Log Entries <span class="bg bg-info text-white py-auto px-2">{{ getNumOfWaterLogEntries() }}</span></h2>
     <table class="table table-striped table-hover">
       <thead class="bg bg-info text-white">
         <tr>
+          <th>Click to View</th>
           <th>Id</th>
           <th>Amt In Ounces</th>
           <!-- <th>Is Sparkling</th> -->
@@ -14,6 +15,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let water of waterLog">
+          <td>
+            <button class="btn btn-success" (click)="displayWaterLogDetail(water)">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-journal-check" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                </svg>
+              </span>
+            </button>
+        </td>
           <td>{{water.id}}</td>
           <td>{{water.amountInOunces}} ounces</td>
           <td>{{water.waterLogComment}}</td>
@@ -30,7 +42,7 @@
       </tbody>
     </table>
   </div>
-  <div id="addNewWaterLogEntry">
+  <div id="addNewWaterLogEntry" *ngIf="!selected" class="pb-3">
     <div class="row">
       <div class="col-4">
         <div class="row">
@@ -74,7 +86,7 @@
           <label for="waterLogComment" class="h7">Log Entry Comment</label>
           <textarea class="form-control" name="waterLogComment" [(ngModel)]="newWaterLog.waterLogComment" placeholder="Water log entry comment..."></textarea>
       </div>
-      <div class="form-group w-50">
+      <div class="form-group w-50 py-2 px-1">
         <button type="button"  class="btn btn-success" (click)="addWaterLog(newWaterLog)">Add Log Entry</button>
       </div>
       </div>
@@ -86,7 +98,109 @@
       </div>
     </div>
   </div>
-  <div id="showSingleWaterLogDetailView">
+  <div *ngIf="selected && !editWaterLogEntry" id="showSingleWaterLogDetailView">
+    <h2 class="py-auto px-2">Water Log Entry Detail</h2>
+    <h4 class="py-auto px-3">Id# <span class="bg bg-info text-white py-auto px-1">{{selected.id}}</span></h4>
+    <table class="table table-striped table-hover">
+      <thead class="bg bg-info text-white">
+        <tr>
+          <th>Amt In Ounces</th>
+          <th>Is Sparkling</th>
+          <th>Log Entry Comment</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{selected.amountInOunces}} ounces</td>
+          <td>{{selected.isSparklingWater}} </td>
+          <td>{{selected.waterLogComment}}</td>
+          <td>{{selected.createdAt}}</td>
+          <td>{{selected.updatedAt}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-secondary" (click)="displayTable()">Go Back</button>
+        <span class="p-1"> </span>
+        <button class="btn btn-info text-white" (click)="setEditWaterLogEntry()">Edit Entry</button>
 
+      </div>
+      <div class="col-8">
+
+      </div>
+    </div>
   </div>
+  <div id="editWaterLogEntryView" *ngIf="editWaterLogEntry">
+    <h2 class="py-auto px-2">Update Water Log Entry</h2>
+    <h4 class="py-auto px-3">Id# <span class="bg bg-info text-white py-auto px-1">{{editWaterLogEntry.id}}</span></h4>
+    <div id="editWaterLogEntryForm">
 
+      <div class="row">
+        <div class="col-4">
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <label for="amountInOunces" class="h7">Amt In Ounces</label>
+                <div class="col">
+
+                </div>
+                <div class="col-8">
+                  <input class="form-control w-50 p-0 text-center" type="number" name="amountInOunces"
+                  [(ngModel)]="editWaterLogEntry.amountInOunces" placeholder="8" min="1.0" max="72.00" step="0.50" required>
+                </div>
+                <div class="col">
+
+                </div>
+
+              </div>
+            </div>
+            <div class="col">
+              <label for="isSparklingWater" class="h7">Sparkling / Carbonated?</label>
+              <div class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                  <input type="checkbox" name="isSparklingWater" class="form-check-input w-50 h-100" [(ngModel)]="editWaterLogEntry.isSparklingWater">
+                </div>
+                <div class="col">
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        <div class="form-group w-75">
+            <label for="waterLogComment" class="h7">Log Entry Comment</label>
+            <textarea class="form-control" name="waterLogComment" [(ngModel)]="editWaterLogEntry.waterLogComment" placeholder="Water log entry comment..."></textarea>
+        </div>
+
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row py-2 px-1" id="editWaterLogEntryButtons">
+      <div class="col">
+        <button class="btn btn-secondary" (click)="editWaterLogEntry = null">Cancel</button>
+        <span class="p-1"> </span>
+        <button class="btn btn-success text-white" (click)="updateWaterLogEntry(editWaterLogEntry.id, editWaterLogEntry)">Submit Edit</button>
+
+      </div>
+      <div class="col-8">
+
+      </div>
+    </div>
+
+
+  </div> <!-- end div tag editWaterLogEntryView -->

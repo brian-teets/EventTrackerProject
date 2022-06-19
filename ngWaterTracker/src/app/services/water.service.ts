@@ -66,5 +66,17 @@ export class WaterService {
     );
   }
 
+  update(id: number, water: Water): Observable<Water>{
+    return this.http.patch<Water>(this.url + '/' + id, water).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error(
+            'WaterService.update(): error updating water log entry: ' + err
+          )
+        );
+      })
+    );
+  }
 
 }

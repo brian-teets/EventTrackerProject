@@ -38,6 +38,14 @@ export class HomeComponent implements OnInit {
   newWaterLog: Water = new Water();
   selected: null | Water = null;
 
+  displayWaterLogDetail(water: Water){
+    this.selected = water;
+  }
+
+  displayTable(){
+    this.selected = null;
+  }
+
   addWaterLog(water: Water){
     this.waterSvc.create(water).subscribe({
       next: (newWaterLog) =>{
@@ -63,5 +71,29 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+
+  editWaterLogEntry: null | Water = null;
+
+  setEditWaterLogEntry(){
+    this.editWaterLogEntry = Object.assign({}, this.selected);
+    this.reload();
+  }
+
+  updateWaterLogEntry(id: number, water: Water, setSelected: boolean = true): void {
+    this.waterSvc.update(id, water).subscribe({
+      next: (updated) =>{
+        if(setSelected){
+          this.selected = updated; // back to detail view
+        }
+        this.editWaterLogEntry = null; // back to list table view
+        this.reload();
+    },
+      error: (nojoy) => {
+        console.error('HomeHttpComponent.updateWaterLogEntry(): error updating water log entry:');
+        console.error(nojoy);
+      },
+    });
+  }
+
 
 }
