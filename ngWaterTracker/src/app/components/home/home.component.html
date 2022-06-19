@@ -29,7 +29,7 @@
           <td>{{water.id}}</td>
           <td>{{water.amountInOunces}} ounces</td>
           <td>{{water.waterLogComment}}</td>
-          <td>{{water.createdAt}}</td>
+          <td>{{water.createdAt | date: 'medium'}}</td>
           <td> <button class="btn btn-danger" (click)="deleteWaterLogEntry(water.id)">
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -116,8 +116,8 @@
           <td>{{selected.amountInOunces}} ounces</td>
           <td>{{selected.isSparklingWater}} </td>
           <td>{{selected.waterLogComment}}</td>
-          <td>{{selected.createdAt}}</td>
-          <td>{{selected.updatedAt}}</td>
+          <td>{{selected.createdAt | date: 'medium'}}</td>
+          <td>{{selected.updatedAt | date: 'medium'}}</td>
         </tr>
       </tbody>
     </table>

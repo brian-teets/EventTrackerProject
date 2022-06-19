@@ -1,6 +1,7 @@
 import { WaterService } from './../../services/water.service';
 import { Component, OnInit } from '@angular/core';
 import { Water } from 'src/app/models/water';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
   waterLog: Water[] = [];
 
   constructor(
-    private waterSvc: WaterService
+    private waterSvc: WaterService,
+    private date: DatePipe
   ) { }
 
   ngOnInit(): void {
