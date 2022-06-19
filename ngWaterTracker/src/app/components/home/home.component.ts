@@ -27,10 +27,27 @@ export class HomeComponent implements OnInit {
       error: (fail)=>{
         console.log('HomeComponent.reload: error loading list');
         console.log(fail);
-
-
       }
-    })
+    });
+  }
+
+  getNumOfWaterLogEntries(){
+    return this.waterLog.length;
+  }
+
+  newWaterLog: Water = new Water();
+
+  addWaterLog(water: Water){
+    this.waterSvc.create(water).subscribe({
+      next: (newWaterLog) =>{
+        this.newWaterLog = new Water();
+        this.reload();
+      },
+      error: (fail) => {
+        console.error('HomeComponent.addWaterLog(): error creating water log:');
+        console.error(fail);
+      },
+    });
   }
 
 }

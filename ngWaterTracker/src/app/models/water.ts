@@ -4,17 +4,21 @@ export class Water {
 
   id: number | null;
   amountInOunces: number | null;
+  isSparklingWater: boolean | null;
   waterLogComment: string | null;
   createdAt: string | null;
+  updatedAt: string | null;
 
   constructor(
-    id: number | null = 0, amountInOunces: number | null = 0,
-    waterLogComment: string | null = '', createdAt: string | null = ''
+    id: number | null = 0, amountInOunces: number | null = 0, isSparklingWater: boolean = false,
+    waterLogComment: string | null = '', createdAt: string | null = '', updatedAt: string | null = ''
   ){
     this.id = id;
     this.amountInOunces = amountInOunces;
+    this.isSparklingWater = isSparklingWater;
     this.waterLogComment = waterLogComment;
     this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
   }
 
 }
