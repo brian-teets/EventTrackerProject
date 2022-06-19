@@ -53,4 +53,18 @@ export class WaterService {
     );
   }
 
+  destroy(id: number): Observable<void>{
+    return this.http.delete<void>(this.url +'/'+ id).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error(
+            'WaterService.delete(): error deleting Water log entry: ' + err
+          )
+        );
+      })
+    );
+  }
+
+
 }

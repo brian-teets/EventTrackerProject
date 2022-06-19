@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   newWaterLog: Water = new Water();
+  selected: null | Water = null;
 
   addWaterLog(water: Water){
     this.waterSvc.create(water).subscribe({
@@ -46,6 +47,19 @@ export class HomeComponent implements OnInit {
       error: (fail) => {
         console.error('HomeComponent.addWaterLog(): error creating water log:');
         console.error(fail);
+      },
+    });
+  }
+
+  deleteWaterLogEntry(id: number): void {
+    this.waterSvc.destroy(id).subscribe({
+      next: () =>{
+        this.newWaterLog = new Water();
+        this.reload();
+      },
+      error: (zap) => {
+        console.error('HomeHttpComponent.deleteWaterLogEntry(): error deleting water log entry:');
+        console.error(zap);
       },
     });
   }
