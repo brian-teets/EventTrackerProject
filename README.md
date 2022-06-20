@@ -27,7 +27,7 @@
    For this iteration of the project, I created an Angular frontend.
 
 ### How to Run
-   * Project has a front end and can be tested via link to project domain name on my AWS EC2 server: 
+   * Project has a front end and can be viewed via link to project domain name on my AWS EC2 server: http://52.8.112.153:8080/WaterTracker/
 
    * For reference, here are the backend controller routes:
 
