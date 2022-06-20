@@ -53,6 +53,7 @@ INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_lo
 INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (5, 8.00, 0, 'Filtered tap water. Pur water filter dispenser.', '2022-06-04T09:13:57', '2022-06-12T10:02:22');
 INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (6, 9.50, 0, 'Drank a bottle of Black Stag vanilla iced latte.', '2022-06-11T12:13:01', '2022-06-12T09:59:58');
 INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (7, 12.00, 1, 'Bubly passionfruit flavored sparkling water.', '2022-06-11T21:17:56', '2022-06-12T09:58:07');
+INSERT INTO `water_tracker` (`id`, `amount_in_ounces`, `is_sparkling`, `water_log_comment`, `created_at`, `updated_at`) VALUES (8, 12.00, 1, 'Spindrift brand sparkling water. Pink lemonade flavor.', '2022-06-18T16:27:04', '2022-06-19T14:52:30');
 
 COMMIT;
 
